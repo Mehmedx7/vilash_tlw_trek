@@ -3,5 +3,8 @@ from .import views
 
 
 urlpatterns = [
-    path('', views.Home, name='Home')
+    path('', views.Home, name='home'),
+    path('about/', views.About, name='about'),
+    path('services/', views.Services, name='services'),
+    path('packages/', views.Packages, name='packages')
 ]
