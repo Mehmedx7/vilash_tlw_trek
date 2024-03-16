@@ -13,3 +13,12 @@ def Services(request):
 
 def Packages(request):    
     return render(request, 'packages.html')
+
+def Blogs(request):    
+    return render(request, 'blogs.html')
+
+def Contact(request):    
+    return render(request, 'contact.html')
+
+def Register(request):    
+    return render(request, 'register.html')
