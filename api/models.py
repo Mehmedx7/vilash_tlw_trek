@@ -25,3 +25,29 @@ class Package(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Popular_Destination_Category(models.Model):
+    names = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.names
+    
+class Popular_Destination_place(models.Model):
+    category = models.ForeignKey(Popular_Destination_Category, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Popular_Destination_Image(models.Model):
+    destination = models.ForeignKey(Popular_Destination_place, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='destination_images/')
+
+    def __str__(self):
+        return self.image.name
+
+
+
+
+    
+
