@@ -6,11 +6,13 @@ from .models import *
 def Home(request):   
     carousel_items = CarouselItem.objects.all()
     packages = Package.objects.all()
-    Popular_Dest_Catgry = Popular_Destination_Category.objects.all()
+    Popular_Dest = Popular_Destination.objects.all()
+    gallery = Gallery.objects.all()
     context = {
         'carousel_items': carousel_items,
         'packages': packages,
-        'Popular_Dest_Catgry': Popular_Dest_Catgry
+        'Popular_Dest': Popular_Dest,
+        'gallery': gallery
     }
     return render(request, 'index.html', context)
 
