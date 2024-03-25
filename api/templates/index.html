@@ -85,31 +85,29 @@
 
     {% comment %} modal \ {% endcomment %}
 <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal fade modal-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Booking Form</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Booking - Payment</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
             <!-- Your booking form content goes here -->
-            <form>
-                <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                </div>
-                <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                </div>
-                <!-- Add more form fields as needed -->
-            </form>
+            <img src={% static "img/payment.png" %} alt="Image Description" style="max-width: 40%; height: auto;">
+            <div class="alert alert-dark mt-3" role="alert">
+                <strong>NOTE:</strong> Kindly click on the Submit Details Button & share screenshot of the successful payment along with following details: <br>
+                <strong>1. Destination:</strong> <br>
+                <strong>2. No. of Pax:</strong> <br>
+                <strong>3. Travel Date:</strong>
+            </div>
+
+
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <a href="https://wa.me/+918286154429/?text=Kindly%20attach%20screenshot%20of%20the%20successful%20payment%20with%20the%20following%20details%3A%0A%0ADestination%3A%20%0ANo%20of%20Pax%3A%20%0ATravel%20Date%3A%20" class="btn btn-secondary">Submit Details</a>
             </div>
+
         </div>
         </div>
     </div>
@@ -134,8 +132,8 @@
                         <img src={{ package.image.url }} class="img-fluid w-100 rounded-top" alt="Image">
                         <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>{{ package.location }}</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>{{package.day}}days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>{{package.pax}}Person</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>{{package.day}} days</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>{{package.pax}} Person</small>
                         </div>
                         <div class="packages-price py-2 px-4">₹{{package.price}}</div>
                     </div>
@@ -218,7 +216,7 @@
                                                     {% endif %}
                                 ">{{explore_tour.Discount_Percentage}}% Off</div>
                                     <div class="national-plus-icon">
-                                        <a href={{explore_tour.Itinerary_link}} class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                        <a href="" class="my-auto btn-hover btn text-white py-2 px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</a>
                                     </div>
                                 </div>
                             </div>
