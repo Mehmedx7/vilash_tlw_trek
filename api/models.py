@@ -21,7 +21,7 @@ class Package(models.Model):
     subtitle = models.CharField(max_length=200)
     star = models.CharField(max_length=200)
     description = models.TextField()
-    brochure_pdf = models.FileField(upload_to='package_pdf', blank=True, null=True)
+    Itinerary_link = models.URLField(default='/')
 
     def __str__(self):
         return self.title
@@ -29,6 +29,7 @@ class Package(models.Model):
 class Popular_Destination(models.Model):
     image = models.ImageField(upload_to='Popular_Destination')
     name = models.CharField(max_length=100)
+    Itinerary_link = models.URLField(default='/')
 
     def __str__(self):
         return self.name
@@ -40,6 +41,35 @@ class Gallery(models.Model):
     def __str__(self):
         return self.name
     
+    
+class The_World(models.Model):
+    image = models.ImageField(upload_to='The_World')
+    name = models.CharField(max_length=100)
+    Discount_Percentage = models.PositiveIntegerField()
+    Itinerary_link = models.URLField(default='/')
+
+    def __str__(self):
+        return self.name
+    
+class Testimonial(models.Model):
+    description = models.CharField(max_length=1000)
+    image = models.ImageField(upload_to='Testimonial')
+    name = models.CharField(max_length=100)
+    place = models.CharField(max_length=100)
+    star = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+    
+class seo(models.Model):
+    keywords = models.TextField()
+    description = models.TextField()
+
+    def __str__(self):
+        return ' '.join(self.keywords.split()[:10])
+    
+    
+
     
     
 
